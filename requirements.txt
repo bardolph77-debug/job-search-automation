@@ -1,2 +1,22 @@
-# Python package dependencies
-# TODO: Add required packages
+# requirements.txt - Optimized for Job Board Scraping
+
+# === CORE (Always Required) ===
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+pandas>=2.1.0
+sqlalchemy>=2.0.0
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+
+# === OPTIONAL: Advanced Scraping (uncomment if needed) ===
+# selenium>=4.15.0
+# undetected-chromedriver>=3.5.0
+
+# === OPTIONAL: ML Matching (add when ready) ===
+# scikit-learn>=1.3.0
+# spacy>=3.7.0
+
+# === OPTIONAL: Web API (add when ready) ===
+# flask>=3.0.0
+# fastapi>=0.104.0
