@@ -1,2 +1,61 @@
-# Configuration file
-# TODO: Add configuration settings
+# config.yaml - Job Search Configuration
+
+scrapers:
+  # === FINNISH JOB BOARDS (Verified Working) ===
+  duunitori:
+    enabled: true
+    priority: 1
+    method: simple_http
+    rate_limit: 1.0
+    base_url: "https://duunitori.fi/tyopaikat"
+    
+  tyomarkkinatori:
+    enabled: true
+    priority: 2
+    method: simple_http
+    rate_limit: 1.5
+    base_url: "https://tyomarkkinatori.fi/henkiloasiakkaat/avoimet-tyopaikat"
+    
+  jobly:
+    enabled: true
+    priority: 3
+    method: simple_http
+    rate_limit: 1.0
+    base_url: "https://www.jobly.fi/tyopaikat"
+    
+  # === INTERNATIONAL BOARDS (Disabled by default) ===
+  linkedin:
+    enabled: false
+    priority: 4
+    method: selenium
+    rate_limit: 3.0
+    base_url: "https://www.linkedin.com/jobs/search"
+    
+  indeed:
+    enabled: false
+    priority: 5
+    method: simple_http
+    rate_limit: 2.0
+    base_url: "https://www.indeed.com/jobs"
+
+# Search preferences
+search:
+  keywords: 
+    - "cybersecurity"
+    - "systems engineer"
+    - "systems architect"
+    - "devops"
+  locations: 
+    - "Finland"
+    - "Remote"
+  max_results_per_board: 20
+
+# Database
+database:
+  type: "sqlite"
+  path: "jobs.db"
+
+# Logging
+logging:
+  level: "INFO"
+  file: "scraper.log"
